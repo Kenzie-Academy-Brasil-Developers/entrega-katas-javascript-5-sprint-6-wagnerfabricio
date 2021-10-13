@@ -38,7 +38,7 @@ const testReverseSentence1 = () => {
     let result = reverseSentence("Eu não gosto de tomar banho")
     let expected = "banho tomar de gosto não eu"
     console.assert(result === expected, {
-        "funcao": "reverseString",
+        "funcao": "reverseSentence",
         "esperado": expected,
         "obteve": result
     })
@@ -50,7 +50,7 @@ const testReverseSentence2 = () => {
     let result = reverseSentence("Um salva para quem está corrigindo aqui!")
     let expected = "aqui! corrigindo está quem para salva um"
     console.assert(result === expected, {
-        "funcao": "reverseString",
+        "funcao": "reverseSentence",
         "esperado": expected,
         "obteve": result
     })
@@ -71,7 +71,7 @@ const testMinimumValue1 = () => {
     let result = minimumValue([2,5,1,3,8,9])
     let expected = 1
     console.assert(result === expected, {
-        "funcao": "reverseString",
+        "funcao": "minimumValue",
         "esperado": expected,
         "obteve": result
     })
@@ -82,7 +82,7 @@ const testMinimumValue2 = () => {
     let result = minimumValue([1.59, -3, 18, -4.5])
     let expected = -4.5
     console.assert(result === expected, {
-        "funcao": "reverseString",
+        "funcao": "minimumValue",
         "esperado": expected,
         "obteve": result
     })
@@ -101,7 +101,7 @@ const testMaximumValue1 = () => {
     let result = maximumValue([1.59, -3, 18, -4.5])
     let expected = 18
     console.assert(result === expected, {
-        "funcao": "reverseString",
+        "funcao": "maximumValue",
         "esperado": expected,
         "obteve": result
     })
@@ -112,7 +112,7 @@ const testMaximumValue2 = () => {
     let result = maximumValue([2,5,1,3,8,9])
     let expected = 9
     console.assert(result === expected, {
-        "funcao": "reverseString",
+        "funcao": "maximumValue",
         "esperado": expected,
         "obteve": result
     })
@@ -128,7 +128,7 @@ const testCalculateRemainder1 = () => {
     let result = calculateRemainder(7,5)
     let expected = 2
     console.assert(result === expected, {
-        "funcao": "reverseString",
+        "funcao": "calculateRemainder",
         "esperado": expected,
         "obteve": result
     })
@@ -139,7 +139,7 @@ const testCalculateRemainder2 = () => {
     let result = calculateRemainder(27,5)
     let expected = 2
     console.assert(result === expected, {
-        "funcao": "reverseString",
+        "funcao": "calculateRemainder",
         "esperado": expected,
         "obteve": result
     })
@@ -161,7 +161,7 @@ const testDistinctValues1 = () => {
     let result = distinctValues([1,5,3,1,2,9,5,7])
     let expected = [1,5,3,2,9,7]
     console.assert(result.toString() === expected.toString(), {
-        "funcao": "reverseString",
+        "funcao": "distinctValues",
         "esperado": expected,
         "obteve": result
     })
@@ -172,10 +172,49 @@ const testDistinctValues2 = () => {
     let result = distinctValues([1,3,7,8.2,1,5,7,8.2])
     let expected = [1,3,7,8.2,5]
     console.assert(result.toString() === expected.toString(), {
-        "funcao": "reverseString",
+        "funcao": "distinctValues",
         "esperado": expected,
         "obteve": result
     })
 }
 testDistinctValues2()
 
+/* ----------------------- KATAS 7 ---------------------- */
+const countValues = (array) => {
+    const result = {}
+
+    array.forEach(number => {
+        if (!Object.keys(result).includes(number.toString())) {
+            result[number.toString()] = 1
+        } else {
+            result[number.toString()]++
+        }
+    })
+
+
+    return result
+}
+
+// console.log(countValues([1, 1, 5, 3, 8, 5, 3, 8, 1, 5, 8]))
+
+const testCountValues1 = () => {
+    let result = countValues([1, 1, 5, 3, 8, 5, 3, 8, 1, 5, 8])
+    let expected = { 1:3, 3:2, 5:3, 8:3 }
+    console.assert(JSON.stringify(result) === JSON.stringify(expected), {
+        "funcao": "countValues",
+        "esperado": expected,
+        "obteve": result
+    })
+}
+testCountValues1()
+
+const testCountValues2 = () => {
+    let result = countValues([3.2, 3.7, 3.2, 3, 3.5, 3.5, 3.2, 3.7, 3, 3.2, 3.8])
+    let expected = { 3: 2, '3.2': 4, '3.7': 2, '3.5': 2, '3.8': 1 }
+    console.assert(JSON.stringify(result) === JSON.stringify(expected), {
+        "funcao": "countValues",
+        "esperado": expected,
+        "obteve": result
+    })
+}
+testCountValues2()
