@@ -89,3 +89,33 @@ const testMinimumValue2 = () => {
 }
 testMinimumValue2()
 
+/* ----------------------- KATAS4 ----------------------- */
+const maximumValue = (array) => {
+    const arrayReverseSort = array.sort((a, b) => {
+        return b - a
+    })
+    return arrayReverseSort[0]
+}
+
+const testMaximumValue1 = () => {
+    let result = maximumValue([1.59, -3, 18, -4.5])
+    let expected = 18
+    console.assert(result === expected, {
+        "funcao": "reverseString",
+        "esperado": expected,
+        "obteve": result
+    })
+}
+testMaximumValue1()
+
+const testMaximumValue2 = () => {
+    let result = maximumValue([2,5,1,3,8,9])
+    let expected = 9
+    console.assert(result === expected, {
+        "funcao": "reverseString",
+        "esperado": expected,
+        "obteve": result
+    })
+}
+testMaximumValue2()
+
