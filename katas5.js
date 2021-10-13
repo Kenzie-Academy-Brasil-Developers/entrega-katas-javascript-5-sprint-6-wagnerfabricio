@@ -146,3 +146,36 @@ const testCalculateRemainder2 = () => {
 }
 testCalculateRemainder2()
 
+/* ----------------------- KATAS 6 ----------------------- */
+const distinctValues = (array) => {
+    const result = [];
+    array.forEach(value => {
+        if (!result.includes(value)) {
+            result.push(value)
+        }
+    })
+    return result
+}
+
+const testDistinctValues1 = () => {
+    let result = distinctValues([1,5,3,1,2,9,5,7])
+    let expected = [1,5,3,2,9,7]
+    console.assert(result.toString() === expected.toString(), {
+        "funcao": "reverseString",
+        "esperado": expected,
+        "obteve": result
+    })
+}
+testDistinctValues1()
+
+const testDistinctValues2 = () => {
+    let result = distinctValues([1,3,7,8.2,1,5,7,8.2])
+    let expected = [1,3,7,8.2,5]
+    console.assert(result.toString() === expected.toString(), {
+        "funcao": "reverseString",
+        "esperado": expected,
+        "obteve": result
+    })
+}
+testDistinctValues2()
+
