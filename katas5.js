@@ -56,3 +56,36 @@ const testReverseSentence2 = () => {
     })
 }
 testReverseSentence2();
+
+/* ----------------------- KATAS 3 ---------------------- */
+const minimumValue = (array) => {
+    const arraySort = array.sort((a, b) => {
+        return a - b 
+    })
+    return arraySort[0]; 
+}
+
+minimumValue([2,5,1,3,8,9])
+
+const testMinimumValue1 = () => {
+    let result = minimumValue([2,5,1,3,8,9])
+    let expected = 1
+    console.assert(result === expected, {
+        "funcao": "reverseString",
+        "esperado": expected,
+        "obteve": result
+    })
+}
+testMinimumValue1()
+
+const testMinimumValue2 = () => {
+    let result = minimumValue([1.59, -3, 18, -4.5])
+    let expected = -4.5
+    console.assert(result === expected, {
+        "funcao": "reverseString",
+        "esperado": expected,
+        "obteve": result
+    })
+}
+testMinimumValue2()
+
