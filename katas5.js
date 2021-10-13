@@ -119,3 +119,30 @@ const testMaximumValue2 = () => {
 }
 testMaximumValue2()
 
+/* ----------------------- KATAS 5 ---------------------- */
+const calculateRemainder = (a, b) => {
+    return a % b
+}
+
+const testCalculateRemainder1 = () => {
+    let result = calculateRemainder(7,5)
+    let expected = 2
+    console.assert(result === expected, {
+        "funcao": "reverseString",
+        "esperado": expected,
+        "obteve": result
+    })
+}
+testCalculateRemainder1()
+
+const testCalculateRemainder2 = () => {
+    let result = calculateRemainder(27,5)
+    let expected = 2
+    console.assert(result === expected, {
+        "funcao": "reverseString",
+        "esperado": expected,
+        "obteve": result
+    })
+}
+testCalculateRemainder2()
+
